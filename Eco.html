@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://127.0.0.1:3001/index.html? -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Eco</title>
+	
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+	<!-- Header js-->
+	<script src="./Eco_files/header.js.download" type="text/javascript"></script>
+	<script src="./Eco_files/bluebird.min.js.download"></script>
+
+	<!-- Jquery -->
+	<script src="./Eco_files/jquery-latest.min.js.download" type="text/javascript"></script>
+	<script src="./Eco_files/jquery-ui.js.download"></script>
+
+	<link rel="stylesheet" href="./Eco_files/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="./Eco_files/range.css">
+
+	<link rel="shortcut icon" type="image/x-icon" href="http://127.0.0.1:3001/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./Eco_files/loader.css">
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1!important}.dg.main .close-button.drag,.dg.main:hover .close-button{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;transition:opacity .1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save>ul{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height .1s ease-out;transition:height .1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid transparent}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.boolean,.dg .cr.boolean *,.dg .cr.function,.dg .cr.function *,.dg .cr.function .property-name{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco,monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:9pt 0;display:block;width:440px;overflow-y:scroll;height:75pt;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px 'Lucida Grande',sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:81pt}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:1pc;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid hsla(0,0%,100%,.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.boolean:hover,.dg .cr.function:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:0}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}</style></head>
+
+<body class="page-dashboard" data-new-gr-c-s-check-loaded="14.1029.0" data-gr-ext-installed="" data-new-gr-c-s-loaded="14.1029.0">
+
+	<!-- LOADING -->
+    <div id="loader" style="display: none;">
+        <div id="circleG">
+            <div id="circleG_1" class="circleG"></div>
+            <div id="circleG_2" class="circleG"></div>
+            <div id="circleG_3" class="circleG"></div>
+        </div>
+    </div>
+    <script>
+		// Wait for window load
+		$("#loader-text").fadeIn();
+		$(window).load(function() {
+			var isIE = /*@cc_on!@*/false || !!document.documentMode;
+			if (isIE) {
+				$("#wrapper").remove();
+				$("#loader-text").html("Internet Explorer is not supported, please try another browser.");
+			} else {
+				$("#loader").fadeOut();
+			}
+
+		});
+	</script>
+
+	<div id="wrapper">
+
+		<!-- HEADER -->
+		<div id="header-scripts"><script>
+    function removeParam(key, sourceURL) {
+        var rtn = sourceURL.split("?")[0],
+            param,
+            params_arr = [],
+            queryString = (sourceURL.indexOf("?") !== -1) ? sourceURL.split("?")[1] : "";
+        if (queryString !== "") {
+            params_arr = queryString.split("&");
+            for (var i = params_arr.length - 1; i >= 0; i -= 1) {
+                param = params_arr[i].split("=")[0];
+                if (param === key) {
+                    params_arr.splice(i, 1);
+                }
+            }
+            rtn = rtn + "?" + params_arr.join("&");
+        }
+        return rtn;
+    }
+
+    //update username & authtoken
+    if(getURLParameter("username") != null && getURLParameter("authtoken") != null && getURLParameter("authtokentype") != null) {
+
+    	localStorage.setItem("username", getURLParameter("username"));
+    	localStorage.setItem("authtoken", encodeURIComponent(getURLParameter("authtoken")));
+        localStorage.setItem("authtokentype", encodeURIComponent(getURLParameter("authtokentype")));
+
+    	var originalURL  = window.location.href;     // Returns full URL
+    	var alteredURL = removeParam("username", originalURL);
+    	var originalURL2 = removeParam("authtokentype", removeParam("authtoken", alteredURL));
+
+    	location.href = originalURL2;
+    }
+
+    if( (getURLParameter('lawid') != null) && (currentPage != 'laws') ) {
+    	//if url contains lawid then open laws page
+    	// location.href = "laws.html?lawid=" + getURLParameter('lawid');
+    }
+
+    //Set page css class
+    $('body').addClass('page-'+currentPage);
+</script>
+
+<meta name="viewport" content="width=1000,maximum-scale=1.0">
+
+<!-- Bootstrap -->
+<script src="./Eco_files/bootstrap.min.js.download"> </script>
+<link href="./Eco_files/bootstrap.min.css" rel="stylesheet">
+<link href="./Eco_files/bootstrap-toggle.min.css" rel="stylesheet">
+<link href="./Eco_files/sb-admin.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="./Eco_files/pax_demo.css">
+<link rel="stylesheet" type="text/css" href="./Eco_files/this_design.css">
+<link class="setlang" rel="stylesheet" type="text/css" href="./Eco_files/en_design.css">
+
+<!-- Custom Fonts -->
+<link rel="stylesheet" href="./Eco_files/font-awesome.min.css">
+
+
+<!-- Menu -->
+<div id="navigation"><div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="fancy-add-speech">
+            <div id="loader" class="loader" style="display: none;border-radius: 10px;"><span id="loader-text" style="display: inline;">Loading</span>
+            </div>
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h2 class="title">ECO Login</h2>
+            <div class="alert alert-danger" id="login-error">Error: login not found</div>
+            <input class="login-input" id="login-email" type="text" placeholder="Username or Email" value="">
+            <input class="login-input" id="login-password" type="password" placeholder="Password">
+            <input class="login-button" type="submit" value="Enter" id="login-button">
+        </div>
+
+    </div>
+</div>
+
+<nav class="navbar navbar-inverse" role="navigation">
+
+    <!-- Top Menu Items -->
+    <ul class="nav navbar-right top-nav" style="width: 10px;">
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav side-nav">
+
+                <a class="navbar-brand" href="https://play.eco/"></a>
+
+                <!-- Activity -->
+                <li>
+                    <ul id="menu-activity" class="" aria-expanded="true">
+
+                        <!-- Dashboard -->
+                        <li class="menu-server page-link menu-highlight" data-page="dashboard">
+                           <a href="http://127.0.0.1:3001/index.html"> <i class="fa fa-fw fa-globe"></i> <span class="localize" translate-key="49">Scientific Data</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Elections -->
+                <li>
+                    <ul id="menu-elections" class="" aria-expanded="true">
+
+                        <!--<li data-page="elections"><a id="election-propose-button" href="javascript:void(0)"><span-->
+                                <!--class='localize' translate-key='51'>Run For Office</span></a>-->
+                            <!--<div id="add-self" style="display:none"></div>-->
+                        <!--</li>-->
+                        <li id="current-elected-officials" data-page="elections"><a class="menu-current-elected-officials" href="http://127.0.0.1:3001/electionTitles.html"><i class="fa fa-fw fa-university"></i><span class="localize" translate-key="162">Elected Officials</span></a>
+                        </li>
+                        <li id="running-elections">
+                            <a class="menu-running-elections menu-no-link" href="javascript:;" data-toggle="collapse" data-target="#menu-running-elections" aria-expanded="true"><i class="fa fa-fw fa-bar-chart"></i><span class="localize" translate-key="164">No Running Elections</span></a>
+                            <ul id="menu-running-elections" class="running-elections-wrapper out opened-menu collapse in" aria-expanded="true" style=""></ul>
+                        </li>
+                        <li id="previous-elections">
+                            <a class="menu-previous-elections" href="javascript:;" data-toggle="collapse" data-target="#menu-previous-elections" aria-expanded="true"><i class="fa fa-fw fa-check-square-o"></i><span class="localize" translate-key="53">Previous Elections </span><span class="caret"></span></a>
+                            <ul id="menu-previous-elections" class="previous-elections-wrapper out opened-menu collapse in" aria-expanded="true" style=""><li class=""><a href="http://127.0.0.1:3001/elections.html?election=1" class="previous-election" data-guid="1"><span>Ratify Constitution 1</span></a></li></ul>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+                <!-- Admin -->
+                <li id="menu-admin" style="display: list-item;">
+                    <a class="menu-admin" href="http://127.0.0.1:3001/admin.html"><i class="fa fa-cog" aria-hidden="true"></i> Admin</a>
+                </li>
+
+
+                <div class="server-details-wrapper">
+                    <div id="username"><div class="server-detials-title">User:</div> <span>꧁༒☬𝓑𝓲𝓜𝓲𝓚</span></div>
+                    <span id="server-title"></span>
+                    <div id="version"><div class="server-detials-title">Version:</div> <span></span></div>
+                    <span><div class="server-detials-title">QuickJoin:</div> <a id="join-link" href="http://127.0.0.1:3001/index.html?" data-toggle="tooltip" data-original-title="" title="">Click here to join.</a> <a id="join-button" data-toggle="tooltip" title="" data-original-title="Click to copy QuickJoin link to clipboard"><i class="fa fa-clipboard"></i></a></span>
+                </div>
+            </ul>
+        </div>
+    </ul>
+    <!-- /.navbar-collapse -->
+</nav>
+
+<script>
+    if (localStorage.getItem("username")) {
+        // Replaced html() with text() to prevent XSS
+        $('#username span').text(localStorage.getItem("username")).show();
+        $('#login').hide();
+    } else {
+        $('#login').show();
+        $('#username').hide();
+        $("#students").addClass('menu-no-link');
+        $("#worlds").addClass('menu-no-link');
+    }
+
+    //menu highlight
+    if (currentPage === "dashboard") {
+        $(".page-link[data-page=dashboard]").addClass("menu-highlight");
+    } else if (currentPage === "elections") {
+        let page = getURLParameter("election");
+
+        if (page == null) {
+            $(".menu-elections").addClass("menu-highlight");
+        } else {
+            $("a.running-election").addClass("menu-highlight");
+            $("a.previous-election").addClass("menu-highlight");
+        }
+    } else if (currentPage === "election-titles") {
+            $(".menu-current-elected-officials").addClass("menu-highlight");
+    } else if (currentPage === "laws") {
+        let page = getURLParameter("lawid");
+        if (page == null) {
+            $(".menu-laws").addClass("menu-highlight");
+        }
+    } else if (currentPage === 'addlaw') {
+        $('.propose-law').addClass('menu-highlight');
+    // } else if (currentPage === 'viewDistricts') {
+    //     $('.view-districts').addClass('menu-highlight');
+    } else if (currentPage === 'teacher') {
+        $('.menu-citizen-activity').addClass('menu-highlight');
+    // } else if (currentPage === "districts") {
+    //     var page = getURLParameter("lawid");
+    //     if (page == null) {
+    //         $(".menu-districts").addClass("menu-highlight");
+    //     }
+    // } else if (currentPage === 'adddistricts') {
+    //     $('.propose-districts').addClass('menu-highlight');
+    } else if (currentPage === 'admin') {
+        $('#menu-admin').addClass('menu-highlight');
+    } else if (currentPage === 'student_view') {
+        $('#students').addClass('menu-highlight');
+    } else if (currentPage === 'discussions' || currentPage === 'discussion') {
+        $('#discussions').addClass('menu-highlight');
+    } else if (currentPage === 'causeandeffect') {
+        $('#causeeffect').addClass('menu-highlight');
+    }
+
+    $('#menu-admin').hide();
+
+    $(document).ready(function () {
+        // election.getInfo(function(data){
+        // 	$('#server-title').html("Server: <span style='color:#fff6b4'>" + data.Description) + "</span>"
+        // })
+
+        $('[data-toggle="tooltip"]').tooltip();
+        $("#join-button").on('click', function() {
+            var quickJoinBtn = $("#join-button");
+            var quickJoinData = document.createElement("textarea");
+
+            // Place in the top-left corner of screen regardless of scroll position.
+            quickJoinData.style.position = 'fixed';
+            quickJoinData.style.top = 0;
+            quickJoinData.style.left = 0;
+            
+            // Ensure it has a small width and height. Setting to 1px / 1em
+            // doesn't work as this gives a negative w/h on some browsers.
+            quickJoinData.style.width = '2em';
+            quickJoinData.style.height = '2em';
+            
+            // We don't need padding, reducing the size if it does flash render.
+            quickJoinData.style.padding = 0;
+            
+            // Clean up any borders.
+            quickJoinData.style.border = 'none';
+            quickJoinData.style.outline = 'none';
+            quickJoinData.style.boxShadow = 'none';
+            
+            // Avoid flash of the white box if rendered for any reason.
+            quickJoinData.style.background = 'transparent';
+            
+            // Set our data and select it for copy
+            quickJoinData.value = quickJoinBtn.attr('value');
+            document.body.appendChild(quickJoinData);
+            quickJoinData.select();
+            quickJoinData.setSelectionRange(0, 99999); /* For mobile devices */
+            document.execCommand("copy");
+            document.body.removeChild(quickJoinData);
+
+            // Display our feedback in the tooltip
+            quickJoinBtn.attr('title', 'Link copied!')
+                        .tooltip('fixTitle')
+                        .tooltip('show');
+        });
+
+        $("#join-link").mouseleave(function() {
+            var quickJoinBtn = $("#join-button");
+            quickJoinBtn.attr('title', 'Click to copy QuickJoin link to clipboard')
+                        .tooltip('fixTitle');
+        });
+        
+        $(document).on("click", "a.menu-activity", function () {
+            $('#menu-activity').toggleClass("opened-menu");
+
+            $('#menu-activity').slideToggle()
+
+        });
+
+        // $(document).on("click", "a.menu-districts", function () {
+        //
+        //     $('#menu-districts').toggleClass("opened-menu");
+        //
+        //     //closing the Proposed districts  if it's opened
+        //     var lawopen = $('#menu-proposed-districts').hasClass("opened-menu");
+        //     if (lawopen) {
+        //         $('#menu-proposed-districts').slideUp(function () {
+        //         })
+        //     }
+        //
+        //     $('#menu-districts').slideToggle(function () {
+        //         var open = $('#menu-districts').hasClass("opened-menu");
+        //
+        //     });
+        //
+        // });
+
+        $(document).on("click", "a.menu-laws", function () {
+
+            $('#menu-laws').toggleClass("opened-menu");
+            // $('#menu-proposed-districts').toggleClass("opened-menu");
+            $('#menu-active-laws').toggleClass("opened-menu");
+            $('#menu-laws').slideToggle()
+
+        });
+
+        // event for Previous Elections opening
+        $(document).on("click", "a.menu-previous-elections", function () {
+            $('#menu-previous-elections').toggleClass("opened-menu");
+
+            var open = $('#menu-previous-elections').hasClass("opened-menu");
+
+            if(open){
+                localStorage.setItem("prev_elections", JSON.stringify({open: true}) )
+            }else{
+                localStorage.setItem("prev_elections", JSON.stringify({open: false}) );
+            }
+
+        });
+
+        $(document).on("click", "a.menu-running-elections", function () {
+            $('#menu-running-elections').toggleClass("opened-menu");
+
+            var open = $('#menu-running-elections').hasClass("opened-menu");
+
+            if(open){
+                localStorage.setItem("curr_elections", JSON.stringify({open: true}) )
+            }else{
+                localStorage.setItem("curr_elections", JSON.stringify({open: false}) );
+            }
+
+        });
+
+        // event for Proposed Laws opening
+        // $(document).on("click", "a.menu-proposed-districts", function () {
+        //     $('#menu-proposed-districts').toggleClass("opened-menu");
+        //
+        //     var open = $('#menu-proposed-districts').hasClass("opened-menu");
+        //
+        // });
+        //
+        // // event for Active districts opening
+        // $(document).on("click", "a.menu-active-districts", function () {
+        //     $('#menu-active-districts').toggleClass("opened-menu");
+        //
+        //
+        // });
+
+        // event for Proposed Laws opening
+        $(document).on("click", "a.menu-proposed-laws", function () {
+            $('#menu-proposed-laws').toggleClass("opened-menu");
+
+
+        });
+
+        // event for Active Laws opening
+        $(document).on("click", "a.menu-active-laws", function () {
+            //$('#menu-proposed-laws').toggleClass("opened-menu");
+            $('#menu-active-laws').toggleClass("opened-menu");
+            var open = $('#menu-active-laws').hasClass("opened-menu");
+
+        });
+
+
+        // event for Saved Discussion opening
+        $(document).on("click", "a.menu-save-discussion", function () {
+            $('#menu-save-discussion').toggleClass("opened-menu");
+
+        });
+
+        // events for login
+        $(document).on("keypress", "#login-email,#login-password", function (e) {
+            if (e.keyCode == 13) login()
+        });
+        $(document).on("click", "#login-button", login)
+
+        function login() {
+            var username = $("#login-email").val();
+            var password = $("#login-password").val();
+
+            $("#login-error").html("").fadeOut();
+            $(".loader").show();
+            if (username != "" && password != "") {
+                $.ajax({
+                    type: "GET",
+                    url: ACCOUNTAPPIQUERYURL + "game/responsev4",
+                    data: {
+                        user: username,
+                        pass: password,
+                    },
+                    success: function (response) {
+                        if (response.error) {
+                            $("#login-error").html(response.error).fadeIn();
+                        } else if (response.auth_token) {
+                            var originalURL = window.location.href;
+                            var originalURL2 = originalURL + (originalURL.indexOf("?") == -1 ? "?" : (originalURL.indexOf("?") == originalURL.length || originalURL.indexOf("&") == originalURL.length) ? "" : "&") + "username=" + username + "&authtoken=" + password + "&authtokentype=" + authtokentype
+                            location.href = originalURL2;
+                        }
+                        $(".loader").hide();
+                    },
+                    error: function (e) {
+                        console.log("Error: ", e);
+                    }
+                });
+            } else {
+                $("#login-error").html("Username and password required").fadeIn();
+                $(".loader").hide();
+            }
+        }
+
+        $(document).on("click", "#worlds", function () {
+            var username = localStorage.username;
+            var authtoken = localStorage.authtoken;
+            var authtokentype = localStorage.authtokentype;
+            var page = $(this).attr("data-page");
+            var token = $(this).hasClass("menu-no-link");
+            if (!token && username != "" && authtoken != "" && page != "") {
+                $("#loader").show();
+                var url = ACCOUNTAPPIQUERYURL + "login-in-page"
+                    + "?username=" + username
+                    + "&authtoken=" + authtoken
+                    + "&authtokentype=" + authtokentype
+                    + "&page=" + page
+                    + "&return=" + location.href;
+
+                location.href = url;
+            }
+        });
+
+        /* menu position for brand new user */
+
+        var error = getURLParameter('error');
+        if (error != null) {
+            // Replaced html() with text() to prevent XSS
+            $("#status").text(error).fadeIn();
+        }
+        var username = localStorage.username;
+        var authtoken = localStorage.authtoken;
+        var authtokentype = localStorage.authtokentype;
+
+        if (!username && !authtoken && !authtokentype) {
+            $("a.menu-activity,a.menu-elections, a.menu-laws, a.menu-proposed-laws, a.world, a.menu-previous-elections, a.menu-active-laws").trigger("click")
+//            $("a.menu-activity,a.menu-elections, a.menu-laws, a.menu-proposed-laws, a.world, a.menu-previous-elections, a.menu-active-laws, a.menu-districts, a.menu-proposed-districts, a.menu-active-districts").trigger("click")
+        }
+
+
+        else {
+            var laws = '{"open":true}';
+            var elections = '{"open":true}';
+            var activity = '{"open":true}';
+            var electionsSub = '{"open":true}';
+            var lawsub = '{"open":true}';
+            var lawActiveSub = '{"open":true}';
+            var saveDiscussion = '{"open":true}';
+            // var districts = '{"open":true}';
+            // var districtsub = '{"open":true}';
+            // var districtActiveSub = '{"open":true}';
+
+            if (activity) {
+                activity = JSON.parse(activity);
+                if (activity.open) {
+                    $("a.menu-activity").trigger("click");
+
+                    if (saveDiscussion) {
+                        saveDiscussion = JSON.parse(saveDiscussion);
+                        if (saveDiscussion.open) {
+                            $("a.menu-save-discussion").trigger("click")
+                        }
+                    }
+                }
+            }
+            if (elections) {
+                elections = JSON.parse(elections);
+
+                if (elections.open) {
+                    $("a.menu-elections").trigger("click");
+                    if (electionsSub) {
+                        electionsSub = JSON.parse(electionsSub);
+                        if (electionsSub.open) {
+                            $("a.menu-running-elections").trigger("click");
+                            $("a.menu-previous-elections").trigger("click")
+                        }
+                    }
+                }
+            }
+            if (laws) {
+                laws = JSON.parse(laws);
+
+                if (laws.open) {
+                    $("a.menu-laws").trigger("click");
+
+                    if (lawsub) {
+                        lawsub = JSON.parse(lawsub);
+                        if (lawsub.open) {
+                            $("a.menu-proposed-laws").trigger("click")
+                        }
+                    }
+
+                    if (lawActiveSub) {
+                        lawActiveSub = JSON.parse(lawActiveSub);
+                        if (lawActiveSub.open) {
+                            $("a.menu-active-laws").trigger("click")
+                        }
+                    }
+                }
+            }
+
+            // if (districts) {
+            //     districts = JSON.parse(districts);
+            //
+            //     if (districts.open) {
+            //         $("a.menu-districts").trigger("click");
+            //
+            //         if (districtsub) {
+            //             districtsub = JSON.parse(districtsub);
+            //             if (districtsub.open) {
+            //                 $("a.menu-proposed-districts").trigger("click")
+            //             }
+            //         }
+            //
+            //         if (districtActiveSub) {
+            //             districtActiveSub = JSON.parse(districtActiveSub);
+            //             if (districtActiveSub.open) {
+            //                 $("a.menu-active-districts").trigger("click")
+            //             }
+            //         }
+            //     }
+            // }
+        }
+    })
+
+</script></div>
+<input type="hidden" id="game-url" value="">
+<script>$('#navigation').load("menu.html");</script>
+<script src="./Eco_files/menu.js.download"> </script>
+<script src="./Eco_files/globalVariables.js.download"> </script>
+
+
+<script src="./Eco_files/convertSeconds.js.download"></script></div>
+		<script>
+			var currentPage = 'dashboard';
+
+			// Global Header
+			$.get("header.html", function(data) {
+				$(data).prependTo("#header-scripts");
+			});
+		</script>
+
+		<!-- Map js -->
+		<script src="./Eco_files/Map.js.download"></script>
+		<script src="./Eco_files/three.min.js.download"></script>
+		<script src="./Eco_files/EffectComposer.js.download"></script>
+		<script src="./Eco_files/RenderPass.js.download"></script>
+		<script src="./Eco_files/ShaderPass.js.download"></script>
+		<script src="./Eco_files/CopyShader.js.download"></script>
+		<script src="./Eco_files/OrbitControls.js.download"></script>
+		<script src="./Eco_files/Detector.js.download"></script>
+		<script src="./Eco_files/dat.gui.min.js.download"></script>
+		<script src="./Eco_files/ecomap.js.download"></script>
+		<script src="./Eco_files/mapcontrols.js.download"></script>
+        <script src="./Eco_files/localize.js.download"></script>
+
+		<!-- end Map js -->
+
+		<!-- CONTENT -->
+		<div id="page-wrapper">
+			<canvas id="c" width="558" height="581" style="width: 558.328px; height: 581px;"></canvas>
+			<h4 id="status" class="error"></h4>
+			<div class="container-fluid">
+				<div class="row">
+                    <div class="col-xl-4">
+
+                        <!-- Start map control panel -->
+                        <div class="map-control-panel">
+
+                            <!-- Map Layer -->
+                            <div class="map-layer-select-wrapper">
+                                <i class="fa fa-fw fa-caret-down"></i>
+                                <select class="map-layer-select" style="width: 100%">
+                                    <option value="" class="localize" translate-key="59">Select Map Layer</option>
+                                <optgroup label="Animal"><option value="AgoutiCapacity">Agouti</option><option value="Agouti">Agouti Population</option><option value="AlligatorCapacity">Alligator</option><option value="Alligator">Alligator Population</option><option value="BassCapacity">Bass</option><option value="Bass">Bass Population</option><option value="BighornSheepCapacity">Bighorn Sheep</option><option value="BighornSheep">Bighorn Sheep Population</option><option value="BisonCapacity">Bison</option><option value="Bison">Bison Population</option><option value="BlueSharkCapacity">Blue Shark</option><option value="BlueShark">Blue Shark Population</option><option value="CodCapacity">Cod</option><option value="Cod">Cod Population</option><option value="CoyoteCapacity">Coyote</option><option value="Coyote">Coyote Population</option><option value="CrabCapacity">Crab</option><option value="Crab">Crab Population</option><option value="DeerCapacity">Deer</option><option value="Deer">Deer Population</option><option value="ElkCapacity">Elk</option><option value="Elk">Elk Population</option><option value="FoxCapacity">Fox</option><option value="Fox">Fox Population</option><option value="HareCapacity">Hare</option><option value="Hare">Hare Population</option><option value="Invertebrates">Invertebrates</option><option value="JaguarCapacity">Jaguar</option><option value="Jaguar">Jaguar Population</option><option value="MoonJellyfishCapacity">Moon Jellyfish</option><option value="MoonJellyfish">Moon Jellyfish Population</option><option value="MountainGoatCapacity">Mountain Goat</option><option value="MountainGoat">Mountain Goat Population</option><option value="OtterCapacity">Otter</option><option value="Otter">Otter Population</option><option value="PacificSardineCapacity">Pacific Sardine</option><option value="PacificSardine">Pacific Sardine Population</option><option value="PrairieDogCapacity">Prairie Dog</option><option value="PrairieDog">Prairie Dog Population</option><option value="SalmonCapacity">Salmon</option><option value="Salmon">Salmon Population</option><option value="SnappingTurtleCapacity">Snapping Turtle</option><option value="SnappingTurtle">Snapping Turtle Population</option><option value="TarantulaCapacity">Tarantula</option><option value="Tarantula">Tarantula Population</option><option value="TortoiseCapacity">Tortoise</option><option value="Tortoise">Tortoise Population</option><option value="TroutCapacity">Trout</option><option value="Trout">Trout Population</option><option value="TunaCapacity">Tuna</option><option value="Tuna">Tuna Population</option><option value="TurkeyCapacity">Turkey</option><option value="Turkey">Turkey Population</option><option value="WolfCapacity">Wolf</option><option value="Wolf">Wolf Population</option></optgroup><optgroup label="Biome"><option value="TaigaBiome">Boreal Forest Biome</option><option value="ColdForestBiome">Cold Forest Biome</option><option value="DeepOceanBiome">Deep Ocean Biome</option><option value="DesertBiome">Desert Biome</option><option value="ForestBiome">Forest Biome</option><option value="GrasslandBiome">Grassland Biome</option><option value="IceBiome">Ice Biome</option><option value="OceanBiome">Ocean Biome</option><option value="RainforestBiome">Rainforest Biome</option><option value="TundraBiome">Tundra Biome</option><option value="WarmForestBiome">Warm Forest Biome</option><option value="WetlandBiome">Wetland Biome</option></optgroup><optgroup label="Moisture"><option value="FreshWater">Fresh Water</option><option value="Rainfall">Rainfall</option><option value="SoilMoisture">Soil Moisture</option></optgroup><optgroup label="Nutrient"><option value="Nitrogen">Nitrogen</option><option value="Phosphorus">Phosphorus</option><option value="Potassium">Potassium</option></optgroup><optgroup label="Plant Group"><option value="Agave">Agave</option><option value="AgaveYieldPotential">Agave</option><option value="AmanitaMushroom">Amanita Mushroom</option><option value="AmanitaMushroomYieldPotential">Amanita Mushroom</option><option value="ArcticWillow">Arctic Willow</option><option value="ArcticWillowYieldPotential">Arctic Willow</option><option value="BarrelCactus">Barrel Cactus</option><option value="BarrelCactusYieldPotential">Barrel Cactus</option><option value="Beans">Beans</option><option value="BeansYieldPotential">Beans</option><option value="Beets">Beets</option><option value="BeetsYieldPotential">Beets</option><option value="BigBluestemYieldPotential">Big Bluestem</option><option value="BigBluestem">Big Bluestem</option><option value="BirchYieldPotential">Birch</option><option value="Birch">Birch</option><option value="BoleteMushroomYieldPotential">Bolete Mushroom</option><option value="BoleteMushroom">Bolete Mushroom</option><option value="Bullrush">Bullrush</option><option value="BullrushYieldPotential">Bullrush</option><option value="Bunchgrass">Bunchgrass</option><option value="BunchgrassYieldPotential">Bunchgrass</option><option value="Buttonbush">Buttonbush</option><option value="ButtonbushYieldPotential">Buttonbush</option><option value="CamasYieldPotential">Camas</option><option value="Camas">Camas</option><option value="CedarYieldPotential">Cedar</option><option value="Cedar">Cedar</option><option value="Ceiba">Ceiba</option><option value="CeibaYieldPotential">Ceiba</option><option value="ClamYieldPotential">Clam</option><option value="Clam">Clam</option><option value="CommonGrass">Common Grass</option><option value="CommonGrassYieldPotential">Common Grass</option><option value="CookeinaMushroomYieldPotential">Cookeina Mushroom</option><option value="CookeinaMushroom">Cookeina Mushroom</option><option value="Corn">Corn</option><option value="CornYieldPotential">Corn</option><option value="CottonYieldPotential">Cotton</option><option value="Cotton">Cotton</option><option value="CreosoteBushYieldPotential">Creosote Bush</option><option value="CreosoteBush">Creosote Bush</option><option value="CriminiMushroom">Crimini Mushroom</option><option value="CriminiMushroomYieldPotential">Crimini Mushroom</option><option value="DeerLichenYieldPotential">Deer Lichen</option><option value="DeerLichen">Deer Lichen</option><option value="DesertMossYieldPotential">Desert Moss</option><option value="DesertMoss">Desert Moss</option><option value="DwarfWillow">Dwarf Willow</option><option value="DwarfWillowYieldPotential">Dwarf Willow</option><option value="Fern">Fern</option><option value="FernYieldPotential">Fern</option><option value="FilmyFern">Filmy Fern</option><option value="FilmyFernYieldPotential">Filmy Fern</option><option value="FirYieldPotential">Fir</option><option value="Fir">Fir</option><option value="FireweedYieldPotential">Fireweed</option><option value="Fireweed">Fireweed</option><option value="HeliconiaYieldPotential">Heliconia</option><option value="Heliconia">Heliconia</option><option value="HuckleberryYieldPotential">Huckleberry</option><option value="Huckleberry">Huckleberry</option><option value="Jointfir">Jointfir</option><option value="JointfirYieldPotential">Jointfir</option><option value="JoshuaYieldPotential">Joshua</option><option value="Joshua">Joshua</option><option value="KelpYieldPotential">Kelp</option><option value="Kelp">Kelp</option><option value="KingFern">King Fern</option><option value="KingFernYieldPotential">King Fern</option><option value="LatticeMushroomYieldPotential">Lattice Mushroom</option><option value="LatticeMushroom">Lattice Mushroom</option><option value="Lupine">Lupine</option><option value="LupineYieldPotential">Lupine</option><option value="Oak">Oak</option><option value="OakYieldPotential">Oak</option><option value="OceanSpray">Ocean Spray</option><option value="OceanSprayYieldPotential">Ocean Spray</option><option value="OldGrowthRedwood">Old Growth Redwood</option><option value="OldGrowthRedwoodYieldPotential">Old Growth Redwood</option><option value="OrchidYieldPotential">Orchid</option><option value="Orchid">Orchid</option><option value="PalmYieldPotential">Palm</option><option value="Palm">Palm</option><option value="Papaya">Papaya</option><option value="PapayaYieldPotential">Papaya</option><option value="PeatMoss">Peat Moss</option><option value="PeatMossYieldPotential">Peat Moss</option><option value="Pineapple">Pineapple</option><option value="PineappleYieldPotential">Pineapple</option><option value="PitcherPlant">Pitcher Plant</option><option value="PitcherPlantYieldPotential">Pitcher Plant</option><option value="PricklyPear">Prickly Pear</option><option value="PricklyPearYieldPotential">Prickly Pear</option><option value="PumpkinYieldPotential">Pumpkin</option><option value="Pumpkin">Pumpkin</option><option value="Redwood">Redwood</option><option value="RedwoodYieldPotential">Redwood</option><option value="Rice">Rice</option><option value="RiceYieldPotential">Rice</option><option value="SaguaroCactusYieldPotential">Saguaro Cactus</option><option value="SaguaroCactus">Saguaro Cactus</option><option value="Salal">Salal</option><option value="SalalYieldPotential">Salal</option><option value="SaxifrageYieldPotential">Saxifrage</option><option value="Saxifrage">Saxifrage</option><option value="SeagrassYieldPotential">Seagrass</option><option value="Seagrass">Seagrass</option><option value="ShrubPlantGroup">Shrubs</option><option value="SpruceYieldPotential">Spruce</option><option value="Spruce">Spruce</option><option value="SunflowerYieldPotential">Sunflower</option><option value="Sunflower">Sunflower</option><option value="SwitchgrassYieldPotential">Switchgrass</option><option value="Switchgrass">Switchgrass</option><option value="Taro">Taro</option><option value="TaroYieldPotential">Taro</option><option value="Tomatoes">Tomatoes</option><option value="TomatoesYieldPotential">Tomatoes</option><option value="TreePlantGroup">Trees</option><option value="Trillium">Trillium</option><option value="TrilliumYieldPotential">Trillium</option><option value="Urchin">Urchin</option><option value="UrchinYieldPotential">Urchin</option><option value="Waterweed">Waterweed</option><option value="WaterweedYieldPotential">Waterweed</option><option value="Wheat">Wheat</option><option value="WheatYieldPotential">Wheat</option><option value="WhiteBursage">White Bursage</option><option value="WhiteBursageYieldPotential">White Bursage</option></optgroup><optgroup label="Pollution"><option value="AirPollutionSpread">Air Pollution</option><option value="Debris">Debris</option><option value="GroundPollutionSpread">Ground Pollution</option><option value="PlayerActivity">Player Activity</option><option value="PlayerTrampled">Player Trampled</option><option value="TrampledSpread">Trampled Spread</option><option value="TrampledSum">Trampled Sum</option></optgroup><optgroup label="Terrain"><option value="Terrain">Terrain</option></optgroup><optgroup label="World"><option value="CanopySpace">Canopy Space</option><option value="ConstructedSpace">Constructed Space</option><option value="FertileGround">Fertile Ground</option><option value="Height">Height</option><option value="OccupiedCanopySpace">Occupied Canopy Space</option><option value="OccupiedFertileGround">Occupied Fertile Ground</option><option value="OccupiedShrubSpace">Occupied Shrub Space</option><option value="OccupiedUnderwaterFertileGround">Occupied Underwater Fertile Ground</option><option value="Oilfield">Oilfield</option><option value="SaltWater">Salt Water</option><option value="SaltWaterSpread">Salt Water Spread</option><option value="ShrubSpace">Shrub Space</option><option value="Temperature">Temperature</option><option value="UnderwaterFertileGround">Underwater Fertile Ground</option></optgroup></select>
+                                <a href="http://127.0.0.1:3001/comparison.html" class="compare-maps-button">
+                                     <span class="localize" translate-key="161">Compare Maps</span>
+                                </a>
+                            </div>
+
+                            <!-- Map & Info -->
+                            <div style="line-height: 16px;position: absolute;bottom: 82px;left: 134px;border-radius: 3px;overflow: hidden;">
+                                <img src="./Eco_files/map-key.png" style="width: 218px;">
+                                <div style="position: absolute;color: white;top: -3px;padding: 8px;font-size: 14px;">Low</div>
+                                <div style="position: absolute;color: black;top: -3px;padding: 8px;font-size: 14px;right: 0;">High</div>
+                            </div>
+                            <div id="main-map" class="view-map" style="height: 511px;">
+                                <p id="map-position-text">383, 345</p>
+                                <p id="map-info-text"><br></p>
+                                <div type="text" class="progress-day" name="progress-day">7, 23:11</div>
+                                <input type="button" data-type="2" value="2D" id="map-toggle-2d">
+                            </div>
+
+                            <div class="map-controls-wrapper">
+
+                                <!-- Play Button -->
+                                <div class="play-button-wrapper">
+                                    <div id="map-toggle-play"><i class="fa fa-play" aria-hidden="true"></i></div>
+                                </div>
+
+                                <!-- Range Controls -->
+                                <div class="range-controls-wrapper">
+                                    <div class="map-progress-bar-wrapper">
+                                        <progress id="map-progress-bar" value="1" max="1.0"></progress>
+                                    </div>
+
+                                    <div class="range-controls-wrapper-2">
+                                        <div id="range-controls-time-wrapper">
+                                            <div id="range-controls-time-1">
+                                                <!-- <span class="localize" translate-key="64">Day</span> 0<br>00:00 -->
+                                                <span class="localize range-control-time-span-day" translate-key="64">Day</span>
+                                                <span class="range-controls-time-span-1">1<br>00:00</span>
+                                            </div>
+                                        </div>
+                                        <div class="multi-range-content">
+                                            <div id="slider-range" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"><div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 0%; width: 100%;"></div><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"></span><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 100%;"></span></div>
+                                        </div>
+                                        <div id="range-controls-time-wrapper">
+                                            <div id="range-controls-time-2">
+                                                <!-- <span class="localize" translate-key="64">Day</span> 0<br>00:00 -->
+                                                <span class="localize range-control-time-span-day" translate-key="64">Day</span>
+                                                <span class="range-controls-time-span-2">7<br>23:11</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Speed Controls -->
+                                <div class="speed-controls-wrapper">
+                                    <div id="speed-button"><span class="speed-button">0.5</span><br><span class="localize" translate-key="70">days/sec</span></div>
+                                    <input type="range" name="speed" id="map-play-speed" class="renge" min="-10" max="10" value="5" step="0.01">
+                                </div>
+                            </div>
+                        </div><!-- End map control panel -->
+                    </div>
+
+                    <div class="col-xl-8">
+                        <div class="frontpage-info-wrapper">
+                            <ul class="frontpage-info "><li><span class="localize" translate-key="103">Online Players</span><span class="text-highlight">2 / 2 </span></li>  <li><span class="localize" translate-key="104">Time</span><span class="text-highlight"><span class="localize" translate-key="38">Day</span> 7 , 23:11 </span></li>  <li><span class="localize" translate-key="105">Meteor Impact</span><span class="text-highlight">38 <span class="time-title localize" translate-key="155">days</span> 48 <span class="time-title localize" translate-key="157">mins</span>  </span></li>  <li><span class="localize" translate-key="106">Plants</span><span class="text-highlight">103642  </span></li>  <li><span class="localize" translate-key="57">Proposed Laws</span><span class="text-highlight">0 </span></li>  <li><span class="localize" translate-key="107">World Size</span><span class="text-highlight">0.52km² </span></li>  </ul>
+                        </div>
+
+                        <iframe id="graph_composer" src="./Eco_files/index.html"></iframe>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!--<iframe id="graph-pollution" style="float:none;margin-right: 40px;" class="iframe" src="graph_composer/index.html?page=dashboard&graph=pollution&graphcomposer=false"></iframe>
+                    <iframe id="graph-populations" style="float:none;margin-right: 40px;" class="iframe" src="graph_composer/index.html?page=dashboard&graph=populations&graphcomposer=false"></iframe>
+                    <iframe id="graph-playerskill" style="float:none;" class="iframe" src="graph_composer/index.html?page=dashboard&graph=skills&graphcomposer=false"></iframe>-->
+                </div>
+
+                <div class="frontpage-info-footer"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- FOOTER -->
+	<div id="footer-scripts"><script>
+
+$('.map-layer-select').change(function(){
+    $(this).prev().hide();
+});
+</script>
+<script src="./Eco_files/bootstrap-toggle.min.js.download"> </script></div>
+	<script>
+		var height = $( window ).height(),
+			map_height = (height*0.75)-90;
+
+		$('#main-map').css('height','511px');
+		// Global Footer
+		$.get("footer.html", function(data) {
+			$(data).prependTo("#footer-scripts");
+		});
+
+		var ConvertSecondsComments = ConvertSecondsComments || false;
+
+		stop_undtil_load();
+		function stop_undtil_load() {
+			if( ConvertSecondsComments === false ) setTimeout(stop_undtil_load, 100);
+			else loadFrontPage();
+		}
+
+		function loadFrontPage(){
+			//Footer - Local
+
+			// Appending server info
+			var url = APPIQUERYURL + "/info";
+
+
+			$.get(url, function(data,status){
+
+				var row = "<li><span class='localize' translate-key='103'><b>  Online Players   </b></span><span class='text-highlight'>"+data.OnlinePlayers+" / " + data.TotalPlayers + " </span></li> ";
+                row +=  " <li><span  class='localize' translate-key='104'><b>  Time </b></span><span class='text-highlight'>" + ConvertSecondsComments(data.TimeSinceStart) + " </span></li> ";
+                row += " <li><span  class='localize' translate-key='105'><b>  Meteor Impact </b></span><span class='text-highlight'>" + ConvertSeconds(data.TimeLeft) + " </span></li> ";
+                row += " <li><span  class='localize' translate-key='106'><b>  Plants  </b></span><span class='text-highlight'>" + data.Plants + "  </span></li> ";
+                row += " <li><span  class='localize' translate-key='57'><b>  Laws  </b></span><span class='text-highlight'>" + data.Laws + " </span></li> ";
+                row += " <li><span  class='localize' translate-key='107'><b>  World Size  </b></span><span class='text-highlight'>" + data.WorldSize + " </span></li>  ";
+
+
+				$('.frontpage-info').append(row).fadeIn();
+
+				/* Disable frontpage graphs until API is updated
+				var categories = [];
+				data = data.Graphs;
+
+				for(var i = 0; i < data.length; i++) {
+					var obj = {
+							name: data[i].Name,
+							keys: data[i].Graph.Keys,
+							category: data[i].Category,
+							time_start: data[i].Graph.TimeMin,
+							time_end: data[i].Graph.TimeMax
+						};
+					categories.push(obj);
+				}
+
+				if(!categories[0].category || !categories[0].keys.length) {
+					$('#graph-playerskill').remove();
+					$('#graph-populations').addClass('frontpage-full-graph');
+				}
+
+				if(!categories[1].category || !categories[1].keys.length) {
+					$('#graph-populations').remove();
+				}
+				*/
+			})
+		}
+	</script>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
